@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container p-3 my-3">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h1>{{blogpost.title}}</h1>
+            <h6 class="text-muted">Skrevet av {{blogpost.author}}</h6>
+            <p class="fs-5 lh-lg">{{blogpost.content}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,10 +5,16 @@ from django.conf.urls.static import static
 
 
 from blog.blogpost.views import BlogpostListView
+from blog.blogpost.views import BlogpostDetailView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("blogposts/", BlogpostListView.as_view()),
+    path("", BlogpostListView.as_view(), name="blogpost-list"),
+    path(
+        "blogpost/<int:pk>/",
+        BlogpostDetailView.as_view(),
+        name="blogpost-detail",
+    ),
 ]
 
 if settings.DEBUG:
